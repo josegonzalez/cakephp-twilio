@@ -1,0 +1,12 @@
+h1. Twilio Datasource
+
+I've decided to clean this up a bit more and release it. Hopefully someone will find it useful.
+
+
+h2. Background
+
+I am well aware that there is an existing Twilio datasource for CakePHP "released" by Aaron Reisman. His original datasource is at "http://bin.cakephp.org/view/1093512669":http://bin.cakephp.org/view/1093512669. I have no idea whether that worked or not, he "originally asked for help":http://irc.cakephp.org/logs/link/1540293#message1540303 on irc://freenode.net/#cakephp, and I answered. He ended up "prematurely releasing it on the Bakery":http://bakery.cakephp.org/articles/view/twilio-datasource, without giving me credit. Shame, as I knew there were bugs (there likely still are).
+
+This is a continuation of that original datasource, with all my changes. You can view the original changelog at "https://gist.github.com/5e54a81e7b3b7c73596d":https://gist.github.com/5e54a81e7b3b7c73596d
+
+h2. Usage
