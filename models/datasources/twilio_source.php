@@ -1,6 +1,6 @@
 <?php
 /**
- * Twilio Datasource behavior
+ * Twilio Datasource
  *
  * Used for reading and writing to Twilio, through models.
  *
