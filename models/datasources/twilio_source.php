@@ -39,7 +39,7 @@ function json_decode($json) {
 	eval($out . ';');
 	return $x;
 }
-
+}
 class TwilioSource extends DataSource {
 
 	var $conf = array(
