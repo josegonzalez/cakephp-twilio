@@ -115,6 +115,14 @@ class TwilioSource extends DataSource {
 		return array('texts');
 	}
 
+    function connect() {
+        return true;
+    }
+
+    function disconnect() {
+        return true;
+    }
+
 	function read(&$model, $queryData = array()) {
 		$response = $this->Socket->get(
 			"/{$this->conf['version']}/Accounts/{$this->conf['sid']}/SMS/Messages.json",
