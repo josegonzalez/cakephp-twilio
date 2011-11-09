@@ -42,8 +42,8 @@ class TwilioBehavior extends ModelBehavior {
  * @return boolean True if sent, false otherwise
  * @access public
  */
-	function sendSms(&$model, $To, $Message = null, $From = null) {
-		if (!$this->_setupModel()) {
+	function sendSms(&$model, $To, $Body = null, $From = null) {
+		if (!$this->_setupModel($model)) {
 			return false;
 		}
 
@@ -51,10 +51,10 @@ class TwilioBehavior extends ModelBehavior {
 			if (isset($To['From'])) {
 				$From = $To['From'];
 			}
-			if (isset($To['Message'])) {
-				$Message = $To['Message'];
+			if (isset($To['Body'])) {
+				$Body = $To['Body'];
 			}
-			if (isset($to['To'])) {
+			if (isset($To['To'])) {
 				$To = $To['To'];
 			}
 		}
@@ -67,11 +67,11 @@ class TwilioBehavior extends ModelBehavior {
 			$From = $this->settings[$model->alias]['From'];
 		}
 
-		if (empty($To) || empty($Message) || empty($From)) {
+		if (empty($To) || empty($Body) || empty($From)) {
 			return false;
 		}
 
-		return $this->_Text->save(compact('To', 'Message', 'From'));
+		return $this->_Text->save(compact('To', 'Body', 'From'));
 	}
 
 /**
@@ -80,7 +80,7 @@ class TwilioBehavior extends ModelBehavior {
  * @return void
  * @access protected
  */
-	function _setupModel() {
+	function _setupModel(&$model) {
 		if ($this->_Text) {
 			return true;
 		}
